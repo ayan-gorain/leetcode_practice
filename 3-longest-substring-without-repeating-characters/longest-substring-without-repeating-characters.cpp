@@ -1,8 +1,7 @@
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
-
-        vector<bool> count(256,0);
+         vector<bool> count(256,0);
         int len =0,first=0,second=0;
         while(second<s.size()){
             while(count[s[second]])
@@ -15,8 +14,6 @@ public:
             second++;
         }
 
-        return len;
-
-        
+        return len;  
     }
 };
