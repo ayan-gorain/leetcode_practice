@@ -9,16 +9,13 @@
 class Solution {
 public:
     void deleteNode(ListNode* node) {
-        if (node == nullptr || node->next == nullptr) {
-            return ;
-        }
-         ListNode* nextNode = node->next;
+        
+       ListNode* nextNode = node->next;
         node->val = nextNode->val;
-        
-        // Point the current node's next to the next node's next
+        // Update the next pointer of the current node to skip the next node
         node->next = nextNode->next;
-        
-        // Delete the old next node
+        // Delete the next node
         delete nextNode;
     }
 };
+
